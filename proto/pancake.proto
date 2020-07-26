@@ -3,13 +3,23 @@ package pancake.baker;
 
 option go_package = "gen/api";
 
+import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 
 service PancakeBakerService {
 	// Bakeは指定されたメニューのパンケーキを焼く関数です
-	rpc Bake(BakeRequest) returns (BakeResponse) {}
+	rpc Bake(BakeRequest) returns (BakeResponse) {
+		option (google.api.http) = {
+			post: "/v1/pankake"
+			body: "*"
+		};
+	}
 	// Reportはメニューごとに焼いたパンケーキの数を返します
-	rpc Report(ReportRequest) returns (ReportResponse) {}
+	rpc Report(ReportRequest) returns (ReportResponse) {
+		option (google.api.http) = {
+			get: "/v1/pankake"
+		};
+	}
 }
 
 //Pancakeは一枚一枚の焼かれたパンケーキを表します。
