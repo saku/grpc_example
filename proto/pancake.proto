@@ -10,14 +10,14 @@ service PancakeBakerService {
 	// Bakeは指定されたメニューのパンケーキを焼く関数です
 	rpc Bake(BakeRequest) returns (BakeResponse) {
 		option (google.api.http) = {
-			post: "/v1/pankake"
+			post: "/v1/pancake"
 			body: "*"
 		};
 	}
 	// Reportはメニューごとに焼いたパンケーキの数を返します
 	rpc Report(ReportRequest) returns (ReportResponse) {
 		option (google.api.http) = {
-			get: "/v1/pankake"
+			get: "/v1/pancake"
 		};
 	}
 }

@@ -213,9 +213,9 @@ func RegisterPancakeBakerServiceHandlerClient(ctx context.Context, mux *runtime.
 }
 
 var (
-	pattern_PancakeBakerService_Bake_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "pankake"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PancakeBakerService_Bake_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "pancake"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PancakeBakerService_Report_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "pankake"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PancakeBakerService_Report_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "pancake"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (
