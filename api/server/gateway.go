@@ -10,7 +10,7 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	"pancake/maker/gen/api"
+	"github.com/saku/proto/go/sample"
 )
 
 func run() error {
@@ -21,7 +21,7 @@ func run() error {
 	mux := runtime.NewServeMux()
 	opts := []grpc.DialOption{grpc.WithInsecure()}
 	endpoint := fmt.Sprintf("localhost:50051")
-	err := api.RegisterPancakeBakerServiceHandlerFromEndpoint(ctx, mux, endpoint, opts)
+	err := sample.RegisterPancakeBakerServiceHandlerFromEndpoint(ctx, mux, endpoint, opts)
 	if err != nil {
 		return err
 	}

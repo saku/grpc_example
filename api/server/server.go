@@ -11,7 +11,8 @@ import (
 	"google.golang.org/grpc/reflection"
 
 	"pancake/maker/handler"
-	"pancake/maker/gen/api"
+
+	"github.com/saku/proto/go/sample"
 )
 
 func main() {
@@ -22,9 +23,9 @@ func main() {
 	}
 
 	server := grpc.NewServer()
-	api.RegisterPancakeBakerServiceServer(server, handler.NewBakerHandler())
+	sample.RegisterPancakeBakerServiceServer(server, handler.NewBakerHandler())
 	reflection.Register(server)
-	
+
 	go func() {
 		log.Printf("start gRPC server port: %v", port)
 		server.Serve(lis)
